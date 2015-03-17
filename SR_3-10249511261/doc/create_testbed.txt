@@ -1,0 +1,16 @@
+# $HeadURL$
+# $Id$
+#
+# how to create testbed infrastructure
+
+### installing weblogic and domain creation
+unzip wls1213_devzip_update1.zip -d c:\devel\ora\testbed\SR_3-10249511261
+cd c:\devel\ora\testbed\SR_3-10249511261\wls12130
+configure.cmd
+
+### prepare maven repository with oracle weblogic artifacts if needed
+https://docs.oracle.com/middleware/1213/wls/WLPRG/maven.htm#WLPRG587
+
+### create basic ejb webapp with oepe-12.3.3
+
+mvn archetype:generate -DarchetypeGroupId=com.oracle.weblogic.archetype -DarchetypeArtifactId=basic-webapp-ejb -DarchetypeVersion=12.1.3-0-0 -DgroupId=de.fsuj.urz.iss.sr.oracle -DartifactId=SR_3-10249511261-cdi  -Dversion=1.0-SNAPSHOT
